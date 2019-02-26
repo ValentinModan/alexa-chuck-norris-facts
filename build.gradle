@@ -40,14 +40,16 @@ aws {
     region = 'eu-west-1'
 }
 
-task deploy(type: AWSLambdaMigrateFunctionTask, dependsOn: build) {
-    functionName = "alexa-chuck-norris-facts"
-    handler = "chucknorrisfacts.ChuckStreamHandler"
-    role = "arn:aws:iam::${aws.accountId}:role/lambda_basic_execution"
-    runtime = Runtime.Java8
-    zipFile = shadowJar.archivePath
-    memorySize = 512
-    timeout = 60
+if (new File("${System.getProperty("user.home")}/.aws/credentials").exists()) {
+    task deploy(type: AWSLambdaMigrateFunctionTask, dependsOn: build) {
+        functionName = "alexa-chuck-norris-facts"
+        handler = "chucknorrisfacts.ChuckStreamHandler"
+        role = "arn:aws:iam::${aws.accountId}:role/lambda_basic_execution"
+        runtime = Runtime.Java8
+        zipFile = shadowJar.archivePath
+        memorySize = 512
+        timeout = 60
+    }
 }
 
 build.dependsOn shadowJar
