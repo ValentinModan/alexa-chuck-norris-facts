@@ -42,7 +42,7 @@ aws {
 
 task deploy(type: AWSLambdaMigrateFunctionTask, dependsOn: build) {
     functionName = "alexa-chuck-norris-facts"
-    handler = "chucknorrisfacts.FactStreamHandler"
+    handler = "chucknorrisfacts.ChuckStreamHandler"
     role = "arn:aws:iam::${aws.accountId}:role/lambda_basic_execution"
     runtime = Runtime.Java8
     zipFile = shadowJar.archivePath
