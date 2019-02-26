@@ -1,0 +1,40 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "chuck norris facts",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "FactIntent",
+          "slots": [],
+          "samples": [
+            "give me a fact",
+            "say a fact",
+            "tell me a fact",
+            "a fact",
+            "give me a Chuck Norris fact",
+            "say a Chuck Norris fact",
+            "tell me a Chuck Norris fact",
+            "a Chuck Norris fact"
+          ]
+        }
+      ],
+      "types": []
+    }
+  }
+}
