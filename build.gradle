@@ -24,9 +24,8 @@ dependencies {
     compile "org.codehaus.groovy:groovy:$groovyVersion"
     compile "org.codehaus.groovy:groovy-json:$groovyVersion"
 
-    compile 'log4j:log4j:1.2.17'
-    compile 'org.slf4j:slf4j-api:1.7.10'
-    compile 'com.amazonaws:aws-lambda-java-log4j:1.0.0'
+    runtime "com.amazonaws:aws-lambda-java-log4j2:1.0.0"
+    runtime "org.apache.logging.log4j:log4j-slf4j-impl:2.9.1"
 }
 
 task buildZip(type: Zip) {
@@ -39,6 +38,10 @@ task buildZip(type: Zip) {
 
 aws {
     region = 'eu-west-1'
+}
+
+shadowJar {
+    transform(com.github.jengelman.gradle.plugins.shadow.transformers.Log4j2PluginsCacheFileTransformer)
 }
 
 if (new File("${System.getProperty("user.home")}/.aws/credentials").exists()) {

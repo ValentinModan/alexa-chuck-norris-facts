@@ -9,7 +9,9 @@ import com.amazon.ask.dispatcher.request.handler.RequestHandler
 import com.amazon.ask.model.Response
 import com.amazon.ask.request.Predicates
 import groovy.transform.CompileStatic
+import groovy.util.logging.Slf4j
 
+@Slf4j
 @CompileStatic
 class FactRequestHandler implements RequestHandler {
 
@@ -22,7 +24,7 @@ class FactRequestHandler implements RequestHandler {
      Optional<Response> handle(HandlerInput input) {
         Fact fact = IcndbService.getRandomFact()
         String speechText = fact.text
-        System.out.println("speechText -> " + speechText)
+        log.debug "speechText -> {}", speechText
 
         return input.getResponseBuilder()
             .withSpeech(speechText)
