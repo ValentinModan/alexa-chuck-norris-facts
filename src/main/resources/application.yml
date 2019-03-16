@@ -1,0 +1,5 @@
+micronaut:
+  function:
+    name: alexa-chuck-norris-facts
+jackson:
+  module-scan: false

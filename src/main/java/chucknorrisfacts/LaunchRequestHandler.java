@@ -1,4 +1,4 @@
-package chucknorrisfacts.handlers;
+package chucknorrisfacts;
 
 import static chucknorrisfacts.Constants.SKILL_TITLE;
 import static chucknorrisfacts.Constants.WELCOME_MSG;
@@ -9,8 +9,10 @@ import com.amazon.ask.dispatcher.request.handler.RequestHandler;
 import com.amazon.ask.model.LaunchRequest;
 import com.amazon.ask.model.Response;
 
+import javax.inject.Singleton;
 import java.util.Optional;
 
+@Singleton
 public class LaunchRequestHandler implements RequestHandler {
 
     @Override
