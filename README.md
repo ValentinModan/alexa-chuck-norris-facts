@@ -11,3 +11,5 @@ This repository contains 3 branches, each with a different implementation:
 - `master`: Alexa SDK, Groovy, Json Slurper.
 - `java-micronaut-http-client`: Alexa SDK, Java, Micronaut HTTP low-level client.
 - `java-micronaut-alexa`: Java, Micronaut Alexa-AWS support, Micronaut declarative HTTP client.
+
+The slides of the talk are available at https://www.slideshare.net/ilopmar/voxxeddays-bucharest-2019-alexa-nice-to-meet-you
